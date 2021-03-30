@@ -1,0 +1,44 @@
+$color-gray: #ccc;
+$color-main: #595858;
+
+.catalog {
+    &-header {
+        &-h1 {
+            text-align: center;
+        }
+        &-desc {
+            text-align: center;
+        }
+    }
+    &-products {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &-item {
+            width: 25%;
+            text-decoration: none;
+            &-img {
+                width: 100%;
+                border: 1px solid $color-gray;
+                height: 250px;
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &-name {
+                margin-top: 30px;
+                color: $color-main;
+                font-weight: 800;
+                text-decoration: none;
+                text-align: center;
+            }
+            &-price {
+                margin-top: 10px;
+                text-align: center;
+                color: $color-main;
+            }
+        }
+    }
+}

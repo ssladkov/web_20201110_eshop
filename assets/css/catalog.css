@@ -1,0 +1,48 @@
+.catalog-header-h1 {
+  text-align: center;
+}
+
+.catalog-header-desc {
+  text-align: center;
+}
+
+.catalog-products {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.catalog-products-item {
+  width: 25%;
+  text-decoration: none;
+}
+
+.catalog-products-item-image {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 250px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.catalog-products-item-name {
+  margin-top: 30px;
+  color: #595858;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+}
+
+.catalog-products-item-price {
+  margin-top: 10px;
+  text-align: center;
+  color: #595858;
+}
+/*# sourceMappingURL=catalog.css.map */
