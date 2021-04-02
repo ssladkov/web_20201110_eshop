@@ -25,7 +25,7 @@
             <div class="catalog-header-h1"><?=$category['name'];?></div>
             <div class="catalog-header-desc">Всё товары</div>
         </div>
-        <div class="catalog-products"></div>
+        <div class="catalog-products" data-category-id="<?=$category['id'];?>"></div>
         <div class="catalog-pagination"></div>
     </div>
 </div>
