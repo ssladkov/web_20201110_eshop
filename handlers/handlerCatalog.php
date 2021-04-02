@@ -7,5 +7,5 @@ $response = [
 
 $sql_products = "SELECT * FROM products";
 $response['products'] = get_db_result_assoc($link, $sql_products);
-sleep(3);
+sleep(1);
 echo json_encode($response);
