@@ -15,7 +15,7 @@ if($product == 404) {
 $template = [
     'title' => "Eshop: {$product['name']}",
     'page_css' => 'product.css',
-    'page_js' => ['product.js'],
+    'page_js' => ['product.js', 'cart.js'],
 ];
 include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
 ?>
@@ -27,7 +27,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
         <div class="product-sku">Артикул: <?=$product['sku'];?></div>
         <div class="product-price"><?=$product['price'];?></div>
         <div class="product-description"><?=$product['description'];?></div>
-        <div class="product-add-to-cart">Добавить в корзину</div>
+        <div class="product-add-to-cart" onclick="cart.add(<?=$product['id'];?>, 1);">Добавить в корзину</div>
     </div>
 </div>
 <script>
@@ -35,3 +35,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
         document.querySelector('.lds-backdrop').classList.add('disabled');
     });
 </script>
+<?php
+    include($_SERVER['DOCUMENT_ROOT'].'/parts/footer.php');
+?>  
