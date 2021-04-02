@@ -3,13 +3,14 @@ class Catalog {
         this.catalogProductsEl = document.querySelector('.catalog-products');
         this.preloaderEl = document.querySelector('.lds-backdrop');
         this.products = [];
+        this.categoryId = this.catalogProductsEl.getAttribute('data-category-id');
         this.load();
     }
     load() {
         // загружает данные json по ajax из handlerCatalog
         // после загрузки вызывает renderProducts
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', '/handlers/handlerCatalog.php');
+        xhr.open('GET', '/handlers/handlerCatalog.php?category_id=' + this.categoryId);
         xhr.send();
 
         xhr.addEventListener('load', ()=>{
