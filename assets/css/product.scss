@@ -32,6 +32,38 @@ $product-color-4: rgb(254, 134, 29);
         text-align: center;
         color: $product-color-2;
     }
+    &-size {
+        font-size: 15px;
+        color:grey;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &-dimensions {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+        &-size {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-right: 10px;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    }
+            &-active {
+                background-color: grey;
+    }
+        &-a {
+            color: white;
+            text-decoration: none;
+    }
     &-add-to-cart {
         width: 200px;
         padding: 10px;
@@ -40,5 +72,45 @@ $product-color-4: rgb(254, 134, 29);
         color: $product-color-3;
         margin: 20px auto;
         cursor: pointer;
+    }
+}
+
+.navigation_menu {  
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    }
+    &-li {
+        font-size: 10px;
+        display: inline;
+        line-height: 18px;
+        margin: 0 5px 0 -15px;
+        padding: 0 20px;
+        position: relative;
+        text-transform: uppercase;
+    }
+        &:before {
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            display: block;
+            height: 50%;
+            position: absolute;  
+            border-right: 3px solid #6799c1;
+            transform: skewX(45deg);   
+        &:after {
+            content: '';
+            bottom: 0;
+            top: auto;
+            transform: skewX(-45deg);
+        }
+    &-a {  
+        color: #202021;
+        text-decoration: none;
+    }
+        &:hover {  
+            color: #266ba7;
     }
 }

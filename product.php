@@ -21,12 +21,26 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
 ?>
 
 <div class="wrapper">
+    <ul class="navigation_menu">
+        <li><a class="active" href="#home">Главная</a></li>  
+        <li><a href="#mens">Мужчинам</a></li>
+        <li><a href="#shoes">Обувь</a></li>  
+        <li><a href="#sneakers">Кеды</a></li>
+    </ul>
     <div class="product">
         <div class="product-photo" style="background-image:url(/uploads/images/<?=$product['image'];?>)"></div>
         <div class="product-h1"><?=$product['name'];?></div>
         <div class="product-sku">Артикул: <?=$product['sku'];?></div>
         <div class="product-price"><?=$product['price'];?></div>
         <div class="product-description"><?=$product['description'];?></div>
+        <div class="product-size">Размер</div>
+        <div class="product-dimensions">
+            <div class="size active">38</div>
+            <div class="size">39</div>
+            <div class="size">40</div>
+            <div class="size">41</div>
+            <div class="size">42</div>
+        </div>
         <div class="product-add-to-cart" onclick="cart.add(<?=$product['id'];?>, 1);">Добавить в корзину</div>
     </div>
 </div>
