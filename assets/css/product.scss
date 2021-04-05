@@ -32,6 +32,37 @@ $product-color-4: rgb(254, 134, 29);
         text-align: center;
         color: $product-color-2;
     }
+    &-size {
+        font-size: 15px;
+        color:grey;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &-dimensions {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+        &-size {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-right: 10px;
+            background-color: white;
+            border: 1px solid black;
+    }
+            &-active {
+                background-color: grey;
+    }
+        &-a {
+            color: white;
+            text-decoration: none;
+    }
     &-add-to-cart {
         width: 200px;
         padding: 10px;
@@ -42,3 +73,4 @@ $product-color-4: rgb(254, 134, 29);
         cursor: pointer;
     }
 }
+

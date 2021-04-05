@@ -1,0 +1,41 @@
+ul.navigation_menu {  
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    }
+    &-li {
+        font-size: 10px;
+        display: inline;
+        line-height: 18px;
+        margin: 0 5px 0 -35px;
+        padding: 0 20px;
+        position: relative;
+        text-transform: uppercase;
+    }
+        &:after {
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            display: block;
+            height: 50%;
+            position: absolute;  
+
+        &li:before {
+            content: "/\00a0";
+            bottom: 0;
+            top: auto;
+    }
+    &-a {  
+        color: #202021;
+        text-decoration: none;
+        margin-left: 10px;
+
+    }
+        &:hover {  
+            color: #266ba7;
+            text-decoration: underline;
+
+    }
+}
