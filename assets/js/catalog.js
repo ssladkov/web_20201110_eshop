@@ -3,15 +3,31 @@ class Catalog {
         this.catalogProductsEl = document.querySelector('.catalog-products');
         this.preloaderEl = document.querySelector('.lds-backdrop');
         this.paginationEl = document.querySelector('.catalog-pagination');
+        this.filterEl = document.querySelector('.catalog-header-filter');
+
         this.products = [];
         this.categoryId = this.catalogProductsEl.getAttribute('data-category-id');
+        this.filter = {
+            filter_price: null,
+            filter_size: null
+        };
+        this.addFilterListeners();
         this.load();
     }
     load(page_num = 1) {
         // загружает данные json по ajax из handlerCatalog
         // после загрузки вызывает renderProducts
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', `/handlers/handlerCatalog.php?category_id=${this.categoryId}&page=${page_num}`);
+        let get_str = `/handlers/handlerCatalog.php?category_id=${this.categoryId}&page=${page_num}`;
+
+        if(this.filter['filter_size']) {
+            get_str += `&filter_size=${this.filter['filter_size']}`;
+        }
+        if(this.filter['filter_price']) {
+            get_str += `&filter_price=${this.filter['filter_price']}`;
+        }
+
+        xhr.open('GET', get_str);
         xhr.send();
         this.showPreloader();
         xhr.addEventListener('load', ()=>{
@@ -49,6 +65,7 @@ class Catalog {
     }
 
     renderPagination(pagination_data) {
+        //todo: не выводить пагинацию, если страниц == 1
         /**
          * В pagination_data - {pages_count: 5, current_page: 1}
          *
@@ -70,6 +87,15 @@ class Catalog {
             this.paginationEl.appendChild(item);
         }
 
+    }
+
+    addFilterListeners() {
+        this.filterEl.querySelectorAll('.catalog-header-filter-item').forEach((element)=> {
+            element.querySelector('select').addEventListener('change', (e)=>{
+                this.filter[e.target.getAttribute('name')] = e.target.value ? e.target.value : null;
+                this.load(1);
+            });
+        });
     }
 }
 
