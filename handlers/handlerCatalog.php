@@ -26,11 +26,13 @@ $from_record = ($current_page - 1) * $per_page;
 $sql_products = "SELECT * FROM products INNER JOIN product_category ON products.id = product_category.product_id WHERE product_category.category_id = {$category_id}" . $filter_price_sql_where_and;
 //заменяет * на COUNT(*) в строчке $sql_products
 $sql_count_products = str_replace('*', 'COUNT(*)', $sql_products);
+$all_records = get_records_agregate_by($link, $sql_count_products);
+$pages = ceil($all_records / $per_page);
 $response = [
     'products' => get_db_result_assoc($link, $sql_products, null, [$from_record, $per_page]),
     'pagination' => [
         'current_page' => $current_page,
-        'pages_count' => get_records_agregate_by($link, $sql_count_products),
+        'pages_count' => $pages,
     ],
 ];
 //$response['products'] = get_db_result_assoc($link, $sql_products);

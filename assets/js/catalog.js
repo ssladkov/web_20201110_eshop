@@ -65,6 +65,7 @@ class Catalog {
     }
 
     renderPagination(pagination_data) {
+        //todo: не выводить пагинацию, если страниц == 1
         /**
          * В pagination_data - {pages_count: 5, current_page: 1}
          *
