@@ -26,7 +26,6 @@ ul.navigation_menu li+li:before {
   .navigation_menu li a {  
     color: #202021;
     text-decoration: none;
-    margin-left: 10px;
   }
   
 ul.navigation_menu li a:hover {  
