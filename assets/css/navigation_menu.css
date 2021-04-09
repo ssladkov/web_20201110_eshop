@@ -11,27 +11,16 @@ ul.navigation_menu li {
     font-size: 10px;
     display: inline;
     line-height: 18px;
-    margin: 0 5px 0 -35px;
-    padding: 0 20px;
     position: relative;
     text-transform: uppercase;
   }
     
-ul.navigation_menu li:after 
- {
-    content: '';
-    left: 0;
-    right: 0;
-    top: 0;
-    display: block;
-    height: 50%;
-    position: absolute;  
-  }
-  
+
 ul.navigation_menu li+li:before {
-    content: "/\00a0";
+    content: "/";
     bottom: 0;
     top: auto;
+    margin: 0 10px;
   }
   
   .navigation_menu li a {  
