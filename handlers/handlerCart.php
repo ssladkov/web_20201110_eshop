@@ -16,7 +16,7 @@ if (!isset($_SESSION['cart'])) {
 }
 
 if ($action == 'show') {
-    echo json_encode($_SESSION['cart']);
+    echo json_encode(array_values($_SESSION['cart']));
 }
 
 if ($action == 'add') {
@@ -24,24 +24,17 @@ if ($action == 'add') {
     //todo: если в массиве $_SESSION['cart'] уже есть продукт с указанным id, то мы должны просто изменять его количество
     $product_id = $_GET['product_id'];
     $amount = $_GET['amount'];
-    $add_new_element = true;
+
     if ($product_id == '' || $amount == '') {
         header('HTTP/1.1 400 Bad Request');
         die;
     };
 
-    foreach ($_SESSION['cart'] as $key => $value) {
-        if ($value['product_id'] == $product_id) {
-            $_SESSION['cart']["${key}"]['amount'] = $_SESSION['cart']["${key}"]['amount'] + 1;
-
-            $add_new_element = false;
-        }
-    }
-
-    if ($add_new_element == true) {
-        $_SESSION['cart'][] = [
+    if (!isset($_SESSION['cart'][$product_id])) {
+        $_SESSION['cart'][$product_id] = [
             'product_id' => $product_id,
-            'amount' => $amount
+            'amount' => 0
         ];
     }
+    $_SESSION['cart'][$product_id]['amount'] += $amount;
 }
