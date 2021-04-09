@@ -24,7 +24,7 @@ header {
         color:inherit;
         
     }
-    &-nav {
+    & nav {
         display:flex;
         justify-content: space-evenly;
         align-items: center;
@@ -36,7 +36,7 @@ header {
             padding-left:50px;
         }
     }
-    &-cart {
+    & .cart {
         display:flex;
         justify-content: space-evenly;
         align-items: center;

@@ -26,7 +26,7 @@ header a {
   color: inherit;
 }
 
-header-nav {
+header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,16 +38,16 @@ header-nav {
           align-items: center;
 }
 
-header-nav img {
+header nav img {
   width: 50px;
 }
 
-header-nav a, header-nav img {
+header nav a, header nav img {
   padding: 20px;
   padding-left: 50px;
 }
 
-header-cart {
+header .cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +59,7 @@ header-cart {
           align-items: center;
 }
 
-header-cart a {
+header .cart a {
   padding: 10px;
   padding-right: 50px;
 }

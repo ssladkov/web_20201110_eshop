@@ -11,7 +11,8 @@ article h1 {
   text-transform: uppercase;
 }
 
-article h2 {
+article h2 i {
+  font-family: initial;
   font-size: 30px;
   color: #606060;
   padding-top: 10px;
@@ -28,6 +29,7 @@ article button {
   padding-right: 30px;
   cursor: pointer;
   border: solid 1px #303030;
+  text-transform: uppercase;
 }
 
 article button:focus {
