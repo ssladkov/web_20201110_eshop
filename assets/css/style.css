@@ -1,10 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header-nav img {
+  width: 50px;
+}
+
+header-nav a, header-nav img {
+  padding: 20px;
+  padding-left: 50px;
+}
+
+header-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header-cart a {
+  padding: 10px;
+  padding-right: 50px;
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  background-color: grey;
+  opacity: 0.3;
+  height: 2px;
+  width: 96%;
 }
 /*# sourceMappingURL=style.css.map */

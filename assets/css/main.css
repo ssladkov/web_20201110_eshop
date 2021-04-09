@@ -1,1 +1,111 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+article {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+article h1 {
+  font-size: 80px;
+  font-weight: 400;
+  color: #303030;
+  text-transform: uppercase;
+}
+
+article h2 {
+  font-size: 30px;
+  color: #606060;
+  padding-top: 10px;
+  font-weight: 400;
+}
+
+article button {
+  background-color: #fff;
+  margin-top: 50px;
+  font-size: 20px;
+  color: #303030;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  border: solid 1px #303030;
+}
+
+article button:focus {
+  outline: none;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (20vw)[4];
+      grid-template-columns: repeat(4, 20vw);
+  -ms-grid-rows: (20vw)[3];
+      grid-template-rows: repeat(3, 20vw);
+  grid-gap: 0;
+}
+
+main-grid figure .grid-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main-grid .grid-item1 {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+main-grid .grid-item2 {
+  background-color: lightgrey;
+}
+
+main-grid .grid-item4 {
+  background-color: grey;
+}
+
+main-grid .grid-item6 {
+  background-color: lightgrey;
+}
+
+main-grid .grid-item7 {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+main-grid .grid-item8 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+main-grid .grid-item9 {
+  background-color: grey;
+}
+
+main-grid .grid-item10 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 4;
+}
+/*# sourceMappingURL=main.css.map */
