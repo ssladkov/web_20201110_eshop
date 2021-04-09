@@ -1,0 +1,31 @@
+ul.navigation_menu {  
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    }
+    &-li {
+        font-size: 10px;
+        display: inline;
+        line-height: 18px;
+        position: relative;
+        text-transform: uppercase;
+    
+        &li:before {
+            content: "/";
+            bottom: 0;
+            top: auto;
+            margin: 0 10px;
+
+    }
+    &-a {  
+        color: #202021;
+        text-decoration: none;
+
+    }
+        &:hover {  
+            color: #266ba7;
+            text-decoration: underline;
+
+    }
+}

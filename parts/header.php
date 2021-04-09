@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/preloader.css">
     <link rel="stylesheet" href="/assets/css/<?= $template['page_css']; ?>">
+    <link rel="stylesheet" href="/assets/css/navigation_menu.css">
+
 </head>
 <body>
 <div class="lds-backdrop">
