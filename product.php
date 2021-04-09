@@ -4,29 +4,29 @@ if(empty($_GET['id'])) {
     header('Location: /catalog.php');
 }
 include($_SERVER['DOCUMENT_ROOT'].'/parts/header_conf.php');
-$sql = "SELECT * FROM products WHERE id = {$_GET['id']}";
+$sql = "SELECT * FROM products WHERE id = {$_GET['id']}" ;
 $product = get_db_one_record($link, $sql);
 
 if($product == 404) {
     header('HTTP/1.0 404 Not Found');
     die;
 }
-
+//хлебные крошки для страницы продукта
+$breadcrumbs = [
+    ['label' => 'Главная', 'link' => '/'],
+    ['label' => 'Каталог', 'link' => '/catalog.php'],
+    ['label' => $product['name'], 'link' => '/product.php?id=' . $product['id']],
+];
 $template = [
     'title' => "Eshop: {$product['name']}",
     'page_css' => 'product.css',
     'page_js' => ['product.js', 'cart.js'],
+    'breadcrumbs' => $breadcrumbs,
 ];
 include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
 ?>
 
 <div class="wrapper">
-    <ul class="navigation_menu">
-        <li><a class="active" href="#home">Главная</a></li>  
-        <li><a href="#mens">Мужчинам</a></li>
-        <li><a href="#shoes">Обувь</a></li>  
-        <li><a href="#sneaker">Кеды</a></li>
-    </ul>
     <div class="product">
         <div class="product-photo" style="background-image:url(/uploads/images/<?=$product['image'];?>)"></div>
         <div class="product-h1"><?=$product['name'];?></div>
