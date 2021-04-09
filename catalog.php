@@ -11,11 +11,17 @@
         header('HTTP/1.0 404 Not Found');
         die;
     }
-
+    //хлебные крошки для страницы каталога
+    $breadcrumbs = [
+        ['label' => 'Главная', 'link' => '/'],
+        ['label' => $category['name'], 'link' => "/catalog.php?id=" . $category['id']]
+    ];
+    
     $template = [
         'title' => "Eshop: Каталог: {$category['name']}",
         'page_css' => 'catalog.css',
         'page_js' => ['catalog.js', 'product.js'],
+        'breadcrumbs' => $breadcrumbs
     ];
     include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
 ?>
