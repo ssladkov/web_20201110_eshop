@@ -1,5 +1,6 @@
 $color1 :rgb(48,48,48);
 $color2 : rgb(96,96,96);
+$color3 : rgb(187,187,187);
 
 
 article {
@@ -41,44 +42,241 @@ article {
 main {
     display:flex;
     justify-content: center;
-    &-grid {
+    & .grid {
         display: grid;
         grid-template-columns: repeat(4, 20vw);
         grid-template-rows: repeat(3, 20vw);
         grid-gap: 0;
+        span {
+            font-style: italic;
+            font-family: initial;
+            text-align: center;
+            color:white;
+            
+        }
         figure .grid-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        .grid-item {
+            position:relative;
+        }
         .grid-item1 {
             grid-row-start: 1;
             grid-row-end: 3;
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+                text-align: center;
+                color:white;
+            }
+            span {
+                font-size:25px;
+            }
+            
         }
         .grid-item2 {
-            background-color:lightgrey;
+            background-color:$color3;
+            .grid-text-container div img {
+                width:40px;
+                display: block;
+                margin:0 auto;
+            }
+            .grid-text-container div:before {
+                content:'';
+                display: block;
+                position:absolute;
+                width:25px;
+                height:2px;
+                background-color: #fff;
+                right:calc(50% - 60px);
+                top:19px;
+            }
+            .grid-text-container div:after {
+                content:'';
+                display: block;
+                position:absolute;
+                width:25px;
+                height:2px;
+                background-color: #fff;
+                left:calc(50% - 60px);
+                top:19px;
+            }
+            p {
+                font-size:18px;
+                vertical-align: middle;
+                text-align: center;
+                
+            }
+            .grid-text-container {
+                position:relative;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: calc(50% - 70px);
+
+            }
         }
         .grid-item4 {
-            background-color:grey;
+            background-color:$color2;
+            .grid-text-container div img {
+                width:40px;
+                display: block;
+                margin:0 auto;
+                color:white;
+            }
+            
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                text-align: center;
+                color:white;
+            }
+            span {
+                font-size:25px;
+            }
+            .grid-text-container {
+                position:relative;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: calc(50% - 70px);
+
+            }
+        }
+        .grid-item5 {
+            position: relative;
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+                text-align: center;
+                color:white;
+            }
+            span {
+                font-size:25px;
+                text-transform: initial;
+            }
         }
         .grid-item6 {
-            background-color:lightgrey;
+            background-color:$color3;
+            .grid-text-container div img {
+                width:40px;
+                display: block;
+                margin:0 auto;
+            }
+            .grid-text-container div:before {
+                content:'';
+                display: block;
+                position:absolute;
+                width:25px;
+                height:2px;
+                background-color: #fff;
+                right:calc(50% - 60px);
+                top:19px;
+            }
+            .grid-text-container div:after {
+                content:'';
+                display: block;
+                position:absolute;
+                width:25px;
+                height:2px;
+                background-color: #fff;
+                left:calc(50% - 60px);
+                top:19px;
+            }
+            p {
+                font-size:18px;
+                vertical-align: middle;
+                text-align: center;
+                
+            }
+            .grid-text-container {
+                position:relative;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: calc(50% - 70px);
+
+            }
         }
         .grid-item7 {
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
             grid-row-end: 4;
-            
+            position: relative;
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+                text-align: center;
+                color:white;
+            }
+            span {
+                font-size:25px;
+            }
         }
         .grid-item8 {
             grid-column-start: 3;
             grid-column-end: 4;
             grid-row-start: 3;
             grid-row-end: 4;
+            position: relative;
+            img {
+                filter: brightness(50%);
+            }
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+                text-align: center;
+                color:white;
+            }
+            span {
+                font-size:25px;
+                text-transform: initial;
+            }
         }
         .grid-item9 {
-            background-color:grey;
+            background-color:$color2;
+            .grid-text-container div img {
+                width:40px;
+                display: block;
+                margin:0 auto;
+                color:white;
+            }
+            
+            h1 {
+                font-weight: 100;
+                font-size:30px;
+                text-transform: uppercase;
+                text-align: center;
+                color:white;
+            }
+            .grid-text-container {
+                position:relative;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: calc(50% - 70px);
+
+            }
         }
         .grid-item10 {
             grid-column-start: 1;

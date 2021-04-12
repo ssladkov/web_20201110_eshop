@@ -45,7 +45,7 @@ main {
           justify-content: center;
 }
 
-main-grid {
+main .grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (20vw)[4];
@@ -55,54 +55,276 @@ main-grid {
   grid-gap: 0;
 }
 
-main-grid figure .grid-img {
+main .grid span {
+  font-style: italic;
+  font-family: initial;
+  text-align: center;
+  color: white;
+}
+
+main .grid figure .grid-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-main-grid .grid-item1 {
+main .grid .grid-item {
+  position: relative;
+}
+
+main .grid .grid-item1 {
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 3;
 }
 
-main-grid .grid-item2 {
-  background-color: lightgrey;
+main .grid .grid-item1 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
-main-grid .grid-item4 {
-  background-color: grey;
+main .grid .grid-item1 span {
+  font-size: 25px;
 }
 
-main-grid .grid-item6 {
-  background-color: lightgrey;
+main .grid .grid-item2 {
+  background-color: #bbbbbb;
 }
 
-main-grid .grid-item7 {
+main .grid .grid-item2 .grid-text-container div img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+main .grid .grid-item2 .grid-text-container div:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  right: calc(50% - 60px);
+  top: 19px;
+}
+
+main .grid .grid-item2 .grid-text-container div:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  left: calc(50% - 60px);
+  top: 19px;
+}
+
+main .grid .grid-item2 p {
+  font-size: 18px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+main .grid .grid-item2 .grid-text-container {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: calc(50% - 70px);
+}
+
+main .grid .grid-item4 {
+  background-color: #606060;
+}
+
+main .grid .grid-item4 .grid-text-container div img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  color: white;
+}
+
+main .grid .grid-item4 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+main .grid .grid-item4 span {
+  font-size: 25px;
+}
+
+main .grid .grid-item4 .grid-text-container {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: calc(50% - 70px);
+}
+
+main .grid .grid-item5 {
+  position: relative;
+}
+
+main .grid .grid-item5 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+main .grid .grid-item5 span {
+  font-size: 25px;
+  text-transform: initial;
+}
+
+main .grid .grid-item6 {
+  background-color: #bbbbbb;
+}
+
+main .grid .grid-item6 .grid-text-container div img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+main .grid .grid-item6 .grid-text-container div:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  right: calc(50% - 60px);
+  top: 19px;
+}
+
+main .grid .grid-item6 .grid-text-container div:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  left: calc(50% - 60px);
+  top: 19px;
+}
+
+main .grid .grid-item6 p {
+  font-size: 18px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+main .grid .grid-item6 .grid-text-container {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: calc(50% - 70px);
+}
+
+main .grid .grid-item7 {
   -ms-grid-column: 4;
       grid-column-start: 4;
   grid-column-end: 5;
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 4;
+  position: relative;
 }
 
-main-grid .grid-item8 {
+main .grid .grid-item7 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+main .grid .grid-item7 span {
+  font-size: 25px;
+}
+
+main .grid .grid-item8 {
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 4;
   -ms-grid-row: 3;
       grid-row-start: 3;
   grid-row-end: 4;
+  position: relative;
 }
 
-main-grid .grid-item9 {
-  background-color: grey;
+main .grid .grid-item8 img {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
-main-grid .grid-item10 {
+main .grid .grid-item8 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+main .grid .grid-item8 span {
+  font-size: 25px;
+  text-transform: initial;
+}
+
+main .grid .grid-item9 {
+  background-color: #606060;
+}
+
+main .grid .grid-item9 .grid-text-container div img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  color: white;
+}
+
+main .grid .grid-item9 h1 {
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+main .grid .grid-item9 .grid-text-container {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: calc(50% - 70px);
+}
+
+main .grid .grid-item10 {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
