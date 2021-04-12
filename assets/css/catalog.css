@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-.catalog-pagination .catalog-pagination-item.active {
+.catalog-pagination .catalog-pagination-item:active {
   background-color: white;
   color: black;
 }
