@@ -2,6 +2,7 @@ class Cart {
     constructor() {
         this.items = [];
         this.fill(this.render);
+        this.chosenSize = '';
     }
 
     fill(render) {
@@ -48,6 +49,15 @@ class Cart {
         });
 
 
+    }
+
+    setProductSize(element) {
+        let allSizesEl = document.querySelector('.product-dimensions');
+        allSizesEl.querySelectorAll('div.size').forEach((currentSizeEl)=>{
+            currentSizeEl.classList.remove('active');
+        });
+        element.classList.add('active');
+        this.chosenSize = element.textContent;
     }
 }
 

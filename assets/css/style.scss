@@ -2,8 +2,59 @@
 * {
     margin: 0;
     padding: 0;
+    // Шрифт Noto Sans JP 
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+    font-family: 'Noto Sans JP', sans-serif;
+    
+    
+   
 }
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
 }
+
+header {
+    display:flex;
+    position:relative;
+    justify-content: space-between;
+    padding-bottom:10px;
+    a {
+        text-decoration: none;
+        color:inherit;
+        
+    }
+    & nav {
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img {
+            width:50px;
+        }
+        a , img {
+            padding:20px;
+            padding-left:50px;
+        }
+    }
+    & .cart {
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        a {
+            padding:10px;
+            padding-right:50px;
+        }
+    }
+    &:after {
+        content:'';
+        position:absolute;
+        bottom:0;
+        left: 2%;
+        background-color: grey;
+        opacity:0.3;
+        height:2px;
+        width:96%;
+       
+    }
+}
+

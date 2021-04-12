@@ -19,7 +19,7 @@ $color-main: #595858;
         &-item {
             width: 25%;
             text-decoration: none;
-            &-img {
+            &-image {
                 width: 100%;
                 border: 1px solid $color-gray;
                 height: 250px;
@@ -38,6 +38,26 @@ $color-main: #595858;
                 margin-top: 10px;
                 text-align: center;
                 color: $color-main;
+            }
+        }
+    }
+    &-catalog-pagination {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        .catalog-pagination-item {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #aaa;
+            cursor: pointer;
+
+            &:active {
+                background-color: #ccc;
             }
         }
     }
