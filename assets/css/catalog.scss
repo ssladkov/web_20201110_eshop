@@ -80,7 +80,7 @@ $color-main: #595858;
             color: white;
             cursor: pointer;
 
-            &:active {
+            &.active {
                 background-color: white;
                 color: black;
             }
