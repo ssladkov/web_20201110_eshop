@@ -75,3 +75,57 @@ header:after {
   width: 96%;
 }
 /*# sourceMappingURL=style.css.map */
+.footer {
+	padding: 25px;
+	margin-top: 200px;
+	font-size: 15px;
+	display: flex;
+  position: relative;
+
+  }
+  
+  .footer h2 {
+	  font-weight: 600;
+	  text-transform: uppercase;
+	  font-size: 18pxpx;
+  }
+  
+  .footer h2, .footer p {
+	  padding-bottom: 10px;
+    text-align: left;
+  }
+  /* s */
+  
+  .footer > div {
+	  width: 33.3333%;
+  }
+  .footer .left-block p a {
+    text-decoration: none;
+    color: black;
+  }
+  .footer .left-block p a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer .center-block {
+	  text-align: center;
+	  border-left: grey 2px solid;
+	  border-right: grey 2px solid;
+    padding-left: 18%;
+  }
+  .social-icons{
+    text-align: left;
+  }
+  .social-icons a{
+    padding: 5px;
+    
+  }
+  .footer .right-block {
+	  font-weight: 400;
+	  text-align: center;
+    padding-left: 10%;
+  }
+ 
+.inside-footer{
+  margin: 0 auto;
+}
