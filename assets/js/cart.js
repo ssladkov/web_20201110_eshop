@@ -1,20 +1,41 @@
 class Cart {
     constructor() {
         this.items = [];
+        this.fill(this.render);
         this.chosenSize = '';
     }
 
-    fill() {
+    fill(render) {
         let xhr = new XMLHttpRequest();
         xhr.open('GET', '/handlers/handlerCart.php?action=show');
         xhr.send();
 
-        xhr.addEventListener('load', ()=>{
+        xhr.addEventListener('load', () => {
             let data = JSON.parse(xhr.responseText);
-            data.forEach((item_data)=>{
-                this.items.push({'product_id': item_data['product_id'], 'amount': item_data['amount']})
+            this.items = [];
+            data.forEach((item_data) => {
+                this.items.push({ 'product_id': item_data['product_id'], 'amount': item_data['amount'] })
             });
-        });  
+            // console.log(this.items);
+            if (render) {
+                render(this.items);
+            }
+        });
+
+    }
+    render(items) {
+        if (cartPage) {
+            console.log('render');
+            console.log(items);
+            items.forEach((item) => {
+                let newEl = document.createElement('div');
+                newEl.innerHTML = `id:${item.product_id} amount:${item.amount}`;
+                document.body.appendChild(newEl);
+            })
+
+
+        }
+
     }
 
     add(product_id, amount) {
@@ -22,10 +43,12 @@ class Cart {
         xhr.open('GET', `/handlers/handlerCart.php?action=add&product_id=${product_id}&amount=${amount}`);
         xhr.send();
 
-        xhr.addEventListener('load', ()=>{
-            this.fill();
+        xhr.addEventListener('load', () => {
+            this.fill(this.render);
+            // console.log(xhr.responseText);
         });
-        console.log(this.items); 
+
+
     }
 
     setProductSize(element) {

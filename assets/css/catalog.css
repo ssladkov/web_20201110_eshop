@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-.catalog-products-item-image {
+.catalog-products-item-img {
   width: 100%;
   border: 1px solid #ccc;
   height: 250px;
@@ -44,25 +44,5 @@
   margin-top: 10px;
   text-align: center;
   color: #595858;
-}
-
-.catalog-pagination {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog-pagination .catalog-pagination-item {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #aaa;
-  cursor: pointer;
-}
-.catalog-pagination .catalog-pagination-item.active {
-  background-color: #ccc;
 }
 /*# sourceMappingURL=catalog.css.map */
