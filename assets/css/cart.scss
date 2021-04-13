@@ -164,4 +164,8 @@ $color5:rgb(246,130,56);
 }
 .payment {
     background-color:$color3;
+    margin-top:10px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
 }
