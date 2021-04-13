@@ -1,25 +1,106 @@
+
 .registration {
-  position: absolute;
+
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-form {
-  width: 500px;
+
+
+.form_field {
+
+width: 600px;
+background-color:#f5f5f5;
+border: 5px solid #c0c0c0;
+float: left;
+color: black;
+overflow: hidden;
+margin-top: 50px;
+
 }
 
-form .form-control {
-  width: 100%;
+
+h2 {
+
+font-weight: bold;
+text-align: center;
+margin-bottom: 2em;
+margin-top: 1.5em;
+
 }
+
+p {
+
+font-size: 0.8em;
+line-height: 1.6em;
+margin: 1em;
+
+}
+
+
+label {
+
+margin-left: 1.5em;
+
+}
+
+input {
+
+border: none;
+padding: 10px;  
+margin-bottom: 1em;
+margin-left: 1.5em; 
+
+}
+
+
+input[type="text"], input[type="email"], input[type="password"] {
+
+width: 90%;
+
+}
+
+
+
+input[type="submit"], #submit {
+
+background-color: #000;
+border-radius: 5px;
+color: #fff;
+display: block;
+float: right;
+font-size: 1em;
+margin-right: 0.8em;
+margin-top: 1em;
+
+}
+
+input[type="submit"]:hover, #submit:hover {
+
+background-color: #666;
+
+
+}
+
+
+
+#submit.disabled {
+
+background-color: #999;
+
+}
+
+#submit.disabled:hover {
+
+background-color: #999;
+text-shadow: none;
+box-shadow: none;
+
+}
+
 /*# sourceMappingURL=register.css.map */
