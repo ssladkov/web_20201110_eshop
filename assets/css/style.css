@@ -7,7 +7,7 @@
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 95%;
 }
 
 header {
@@ -38,13 +38,14 @@ header nav {
           align-items: center;
 }
 
-header nav img {
-  width: 50px;
-}
-
-header nav a, header nav img {
+header nav .menu-item, header nav img {
   padding: 20px;
   padding-left: 50px;
+}
+
+header nav img {
+  width: 50px;
+  padding-left: 0;
 }
 
 header .cart {
@@ -61,6 +62,10 @@ header .cart {
 
 header .cart a {
   padding: 10px;
+  padding-right: 0px;
+}
+
+header .cart .a-padding-right {
   padding-right: 50px;
 }
 
@@ -68,10 +73,56 @@ header:after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 2%;
   background-color: grey;
   opacity: 0.3;
   height: 2px;
-  width: 96%;
+  width: 100%;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: #303030;
+}
+
+footer h4 {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+footer a {
+  color: #303030;
+}
+
+footer p {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+footer div {
+  -webkit-box-flex: 33.33%;
+      -ms-flex: 33.33%;
+          flex: 33.33%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+footer .footer-element1, footer .footer-element2 {
+  border-right: 2px rgba(128, 128, 128, 0.3) solid;
+}
+
+footer .footer-element2 div {
+  padding-left: calc(50% - 50px);
+}
+
+footer .footer-element3 div {
+  padding-left: calc(50% - 50px);
+}
+
+footer .footer-element1 a, footer .footer-element2 a, footer .footer-element3 a {
+  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */
