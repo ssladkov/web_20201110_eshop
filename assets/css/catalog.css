@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-.catalog-products-item-image {
+.catalog-products-item-img {
   width: 100%;
   border: 1px solid #ccc;
   height: 250px;
@@ -45,7 +45,6 @@
   text-align: center;
   color: #595858;
 }
-
 .catalog-catalog-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
