@@ -2,26 +2,26 @@
     <div class="footer-element1">
         <div>
             <h4>Коллекции</h4>
-            <a>Женщинам</a><br>
-            <a>Мужчинам</a><br>
-            <a>Детям</a><br>
-            <a>Новинки</a>
+            <a href="/catalog.php?id=1">Женщинам</a><br>
+            <a href="/catalog.php?id=2">Мужчинам</a><br>
+            <a href="#">Детям</a><br>
+            <a href="#">Новинки</a>
         </div>
     </div>
-    <div class="footer-element2">
+    <div class=" footer-element2">
         <div>
             <h4>Магазин</h4>
-            <a>О нас</a><br>
-            <a>Доставка</a><br>
-            <a>Работай с нами</a><br>
-            <a>Контакты</a>
+            <a href="#">О нас</a><br>
+            <a href="#">Доставка</a><br>
+            <a href="#">Работай с нами</a><br>
+            <a href="#">Контакты</a>
         </div>
     </div>
     <div class="footer-element3">
         <div>
             <h4>Мы в социальных сетях</h4>
-            <a>Сайт разработан inordic.ru</a><br>
-            <a>Все права защищены</a>
+            <p>Сайт разработан inordic.ru</p>
+            <p>2018 &#169; Все права защищены</p>
         </div>
     </div>
 </footer>
