@@ -28,9 +28,42 @@
 
 .table-column-names {
   width: 100%;
+  border-bottom: lightgrey solid 2px;
+  color: lightgrey;
 }
 
 .table-column-names p {
   display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.table-column-names .photo-column {
+  width: 15%;
+}
+
+.table-column-names .name-column {
+  width: 35%;
+}
+
+.table-column-names .size-column, .table-column-names .amount-column, .table-column-names .price-column, .table-column-names .delete-column {
+  width: 10%;
+}
+
+.total {
+  min-height: 50px;
+  background-color: rgba(211, 211, 211, 0.5);
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=cart.css.map */

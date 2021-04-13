@@ -1,4 +1,6 @@
 $color1 :rgb(48,48,48);
+$color2:lightgrey;
+$color3:rgba(211,211,211,.5);
 
 .headline {
     display:flex;
@@ -21,7 +23,30 @@ $color1 :rgb(48,48,48);
 }
 .table-column-names {
     width:100%;
+    border-bottom:$color2 solid 2px;
+    color:$color2;
     p {
         display:inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size:12px;
+        padding:5px;
     }
+    .photo-column {
+        width:15%;
+    }
+    .name-column {
+        width:35%;
+    }
+    .size-column ,.amount-column,.price-column,.delete-column {
+        width:10%;
+    }
+}
+.total {
+    min-height:50px;
+    background-color:$color3;
+    margin-top:10px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
 }
