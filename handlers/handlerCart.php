@@ -24,6 +24,7 @@ if ($action == 'add') {
     //todo: если в массиве $_SESSION['cart'] уже есть продукт с указанным id, то мы должны просто изменять его количество
     $product_id = $_GET['product_id'];
     $amount = $_GET['amount'];
+    $size = $_GET['chosenSize'];
 
     if ($product_id == '' || $amount == '') {
         header('HTTP/1.1 400 Bad Request');
@@ -33,8 +34,17 @@ if ($action == 'add') {
     if (!isset($_SESSION['cart'][$product_id])) {
         $_SESSION['cart'][$product_id] = [
             'product_id' => $product_id,
-            'amount' => 0
+            'amount' => 0,
+            'size' => $size
         ];
+    } else if (isset($_SESSION['cart'][$product_id])) {
+        $_SESSION['cart'][$product_id] = [
+            'product_id' => $product_id,
+            'amount' => 0,
+            'size' => $size
+        ];
+        $_SESSION['cart'][$product_id]['size'] = $size;
     }
+    $_SESSION['cart'][$product_id]['size'] = $size;
     $_SESSION['cart'][$product_id]['amount'] += $amount;
 }

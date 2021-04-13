@@ -36,18 +36,18 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
         <div class="product-sku">Артикул: <?= $product['sku']; ?></div>
         <div class="product-price"><?= $product['price']; ?></div>
         <div class="product-description"><?= $product['description']; ?></div>
-        <?php if(!empty($product_sizes)) : ?>
-        <div class="product-size">Размер</div>
-        <div class="product-dimensions">
-            <?php foreach($product_sizes as $product_size) : ?>
-                <!--
+        <?php if (!empty($product_sizes)) : ?>
+            <div class="product-size">Размер</div>
+            <div class="product-dimensions">
+                <?php foreach ($product_sizes as $product_size) : ?>
+                    <!--
                 this в onclick передаст DOM-элемент, в котором onlick
                 -->
-                <div class="size" onclick="cart.setProductSize(this);"><?=$product_size['label'];?></div>
-            <?php endforeach; ?>
-        </div>
+                    <div class="size" onclick="cart.setProductSize(this);"><?= $product_size['label']; ?></div>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
-        <div class="product-add-to-cart" onclick="cart.add(<?= $product['id']; ?>, 1);">Добавить в корзину</div>
+        <div class="product-add-to-cart" onclick="cart.add(<?= $product['id']; ?>, 1,cart.chosenSize);">Добавить в корзину</div>
     </div>
 </div>
 <script>

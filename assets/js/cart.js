@@ -14,7 +14,7 @@ class Cart {
             let data = JSON.parse(xhr.responseText);
             this.items = [];
             data.forEach((item_data) => {
-                this.items.push({ 'product_id': item_data['product_id'], 'amount': item_data['amount'] })
+                this.items.push({ 'product_id': item_data['product_id'], 'amount': item_data['amount'], 'size': item_data['size'] })
             });
             // console.log(this.items);
             if (render) {
@@ -29,7 +29,7 @@ class Cart {
             console.log(items);
             items.forEach((item) => {
                 let newEl = document.createElement('div');
-                newEl.innerHTML = `id:${item.product_id} amount:${item.amount}`;
+                newEl.innerHTML = `id:${item.product_id} amount:${item.amount} size:${item.size}`;
                 document.body.appendChild(newEl);
             })
 
@@ -38,9 +38,9 @@ class Cart {
 
     }
 
-    add(product_id, amount) {
+    add(product_id, amount, chosenSize) {
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', `/handlers/handlerCart.php?action=add&product_id=${product_id}&amount=${amount}`);
+        xhr.open('GET', `/handlers/handlerCart.php?action=add&product_id=${product_id}&amount=${amount}&chosenSize=${chosenSize}`);
         xhr.send();
 
         xhr.addEventListener('load', () => {
@@ -53,11 +53,12 @@ class Cart {
 
     setProductSize(element) {
         let allSizesEl = document.querySelector('.product-dimensions');
-        allSizesEl.querySelectorAll('div.size').forEach((currentSizeEl)=>{
+        allSizesEl.querySelectorAll('div.size').forEach((currentSizeEl) => {
             currentSizeEl.classList.remove('active');
         });
         element.classList.add('active');
         this.chosenSize = element.textContent;
+        console.log(this.chosenSize);
     }
 }
 
