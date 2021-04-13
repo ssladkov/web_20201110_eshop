@@ -1,5 +1,5 @@
-<!-- Это страница вывода каталога -->
 <?php
+    /** Это страница вывода каталога */
     include($_SERVER['DOCUMENT_ROOT'].'/parts/header_conf.php');
     $category_id = 1;
     if(isset($_GET['id'])) {
