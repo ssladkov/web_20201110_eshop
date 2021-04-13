@@ -1,1 +1,36 @@
-/* No CSS *//*# sourceMappingURL=cart.css.map */
+.headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 400px;
+  text-align: center;
+  color: #303030;
+}
+
+.headline h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.headline p {
+  font-size: 25px;
+  font-weight: 100;
+  font-family: initial;
+  font-style: italic;
+}
+
+.table-column-names {
+  width: 100%;
+}
+
+.table-column-names p {
+  display: inline-block;
+}
+/*# sourceMappingURL=cart.css.map */
