@@ -17,12 +17,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
         </div>
     </div>
     <div class="table-column-names">
-        <p>Фото</p>
-        <p>Наименование</p>
-        <p>Размер</p>
-        <p>Количество</p>
-        <p>Стоимость</p>
-        <p>Удалить</p>
+        <p class="photo-column">Фото</p>
+        <p class="name-column">Наименование</p>
+        <p class="size-column">Размер</p>
+        <p class="amount-column">Количество</p>
+        <p class="price-column">Стоимость</p>
+        <p class="delete-column">Удалить</p>
+    </div>
+    <div class="total">
+        <div class="amount">Итого:20 рублей</div>
     </div>
 </div>
 
