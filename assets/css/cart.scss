@@ -1,12 +1,15 @@
 $color1 :rgb(48,48,48);
 $color2:lightgrey;
-$color3:rgba(211,211,211,.5);
+$color3:rgba(211,211,211,.2);
+$color4:rgb(160, 144, 144);
+$color5:rgb(246,130,56);
+
 
 .headline {
     display:flex;
     justify-content: center;
     align-items: center;
-    min-height:400px;
+    min-height:300px;
     text-align: center;
     color:$color1;
     h1 {
@@ -21,32 +24,108 @@ $color3:rgba(211,211,211,.5);
         font-style: italic;
     }
 }
+.gap {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height:200px;
+    .figure {
+        position:relative;
+        width:30px;
+        height:30px;
+        border-bottom:2px solid $color5;
+        border-left:2px solid $color5;
+        transform: rotate(-45deg);
+        
+        
+    }
+    .figure::after {
+        content:'';
+        position:absolute;
+        left:-32px;
+        bottom:30px;
+        width:30px;
+        height:30px;
+        border-bottom:2px solid $color5;
+        border-left:2px solid $color5;
+       
+    }
+    .figure::before {
+        content:'';
+        position:absolute;
+        right:-32px;
+        bottom:-32px;
+        width:30px;
+        height:30px;
+        border-bottom:2px solid $color5;
+        border-left:2px solid $color5;
+       
+    }
+}
 .table-column-names {
     width:100%;
-    border-bottom:$color2 solid 2px;
-    color:$color2;
+    border-bottom:$color2 solid 1px;
+    color:$color4;
+    display:flex;
     p {
         display:inline-block;
         text-align: center;
         text-transform: uppercase;
         font-size:12px;
-        padding:5px;
+        padding:5px 0 5px 0;
     }
     .photo-column {
-        width:15%;
+        flex:15%;
     }
     .name-column {
-        width:35%;
+        flex:42%;
     }
     .size-column ,.amount-column,.price-column,.delete-column {
-        width:10%;
+        flex:10%;
     }
 }
 .total {
     min-height:50px;
     background-color:$color3;
-    margin-top:10px;
+    margin-top:5px;
     display:flex;
     justify-content: flex-end;
     align-items: center;
+}
+.form-wrapper {
+    border:1px solid $color2;
+    .form-container     {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        form {
+            color:$color4;
+            width:700px;
+            margin-bottom:150px;
+            input ,select {
+                width:680px;
+                padding:10px;
+                box-sizing: border-box;
+                border:1px solid $color2;
+            }
+            input ,select:focus {
+                outline:none;
+            }
+            .form-element-small {
+                width:330px;
+            } 
+            label {
+                display:inline-block;
+                width:342px;
+                margin:25px 0 5px 0;
+            }
+            .form-element-right {
+                margin-left:20px;
+            }
+        }
+    }
+}
+.payment {
+    background-color:$color3;
 }
