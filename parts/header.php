@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,22 +12,23 @@
     <link rel="stylesheet" href="/assets/css/navigation_menu.css">
 
 </head>
-<body>
-<div class="lds-backdrop">
-    <div class="lds-facebook">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/parts/menu.php'); ?>
 
-<?php if(isset($template['breadcrumbs'])) : ?>
-<div class="wrapper">
-    <ul class="navigation_menu">
-        <?php foreach($template['breadcrumbs'] as $breadcrumb) : ?>
-            <li><a href="<?=$breadcrumb['link'];?>"><?=$breadcrumb['label'];?></a></li>  
-        <?php endforeach; ?>
-    </ul>
-</div>
-<?php endif; ?>
+<body>
+    <div class="lds-backdrop">
+        <div class="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/parts/menu.php'); ?>
+        <?php if (isset($template['breadcrumbs'])) : ?>
+
+            <ul class="navigation_menu">
+                <?php foreach ($template['breadcrumbs'] as $breadcrumb) : ?>
+                    <li><a href="<?= $breadcrumb['link']; ?>"><?= $breadcrumb['label']; ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+
+        <?php endif; ?>

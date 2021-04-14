@@ -1,9 +1,32 @@
 .catalog-header-h1 {
   text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-style: normal;
 }
 
 .catalog-header-desc {
   text-align: center;
+  font-style: italic;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.catalog-header-filter {
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.catalog-header-filter-item select {
+  margin: 0 10px 0 10px;
+  width: 150px;
+  font-style: italic;
+  color: #595858;
 }
 
 .catalog-products {
@@ -46,7 +69,8 @@
   color: #595858;
 }
 
-.catalog-catalog-pagination {
+
+.catalog-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +83,8 @@
           align-items: center;
 }
 
-.catalog-catalog-pagination .catalog-pagination-item {
+
+.catalog-pagination-item {
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -71,11 +96,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #aaa;
+
+  border: 1px solid black;
+  background-color: black;
+  color: white;
   cursor: pointer;
 }
 
-.catalog-catalog-pagination .catalog-pagination-item:active {
-  background-color: #ccc;
+.catalog-pagination-item.active {
+  background-color: white;
+  color: black;
+
 }
 /*# sourceMappingURL=catalog.css.map */
