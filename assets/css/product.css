@@ -6,75 +6,80 @@
   background-repeat: no-repeat;
 }
 
+
 .product-h1 {
+  font-size: 25px;
+  font-weight: 600;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 25px;
   text-transform: uppercase;
 }
 
+
 .product-sku {
-  text-align: center;
   font-size: 12px;
-  color: #888;
+  color: #dcdcdc;
+  margin-top: 10px;
+  text-align: center;
+  
 }
+
 
 .product-price {
   margin-top: 10px;
+  font-weight: 600;
   text-align: center;
   color: #888;
   font-style: italic;
 }
 
+
 .product-description {
-  margin-top: 15px;
+  font-size: 12px;
+  margin-top: 15px;  
   text-align: center;
   color: #888;
 }
 
+
+  
 .product-size {
-  font-size: 15px;
+  font-size: 12px;
   color: grey;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-top: 15px;
 }
+
+
 
 .product-dimensions {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.product-size {
+
+.product-dimensions .size {
   width: 30px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   margin-right: 10px;
   background-color: white;
   border: 1px solid black;
 }
 
-.product-active {
+
+.product-dimensions .size.active {
   background-color: grey;
 }
 
-.product-a {
+
+.product-dimensions .size a {
   color: white;
   text-decoration: none;
 }
@@ -89,3 +94,4 @@
   cursor: pointer;
 }
 /*# sourceMappingURL=product.css.map */
+

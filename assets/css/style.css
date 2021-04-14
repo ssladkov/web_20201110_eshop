@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+/* noto-sans-jp-regular - latin */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/noto-sans-jp-v28-latin-regular.eot');
+  src: local(''),
+       url('../fonts/noto-sans-jp-v28-latin-regular.woff2') format('woff2'), 
+       url('../fonts/noto-sans-jp-v28-latin-regular.woff') format('woff'), 
+       url('../fonts/NotoSans-Regular.ttf') format('truetype'), 
+       url('../fonts/noto-sans-jp-v28-latin-regular.svg') format('svg'); 
+}
+
 * {
   margin: 0;
   padding: 0;
