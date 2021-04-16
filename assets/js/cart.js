@@ -18,24 +18,26 @@ class Cart {
             });
             // console.log(this.items);
             if (render) {
-                render(this.items);
+                this.render();
             }
         });
 
     }
-    render(items) {
+    render() {
         if (cartPage) {
             console.log('render');
-            console.log(items);
-            items.forEach((item) => {
-                let newEl = document.createElement('div');
-                newEl.innerHTML = `id:${item.product_id} amount:${item.amount} size:${item.size}`;
-                document.body.appendChild(newEl);
+            console.log(this.items);
+            this.items.forEach((element) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', `/handlers/handlerCart.php?action=render&product_id=${element.product_id}`);
+                xhr.send();
+
+                xhr.addEventListener('load', () => {
+                    let data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                });
             })
-
-
         }
-
     }
 
     add(product_id, amount, chosenSize) {

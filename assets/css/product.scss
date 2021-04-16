@@ -45,7 +45,7 @@ $product-color-4: rgb(254, 134, 29);
         align-items: center;
         justify-content: center;
     }
-        &-size { 
+        .size { 
             width: 30px;
             height: 30px;
             display: flex;
@@ -56,7 +56,7 @@ $product-color-4: rgb(254, 134, 29);
             background-color: white;
             border: 1px solid black;
     }
-            &-active {
+            .active {
                 background-color: grey;
     }
         &-a {

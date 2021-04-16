@@ -69,7 +69,6 @@
   color: #595858;
 }
 
-
 .catalog-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,7 +82,6 @@
           align-items: center;
 }
 
-
 .catalog-pagination-item {
   width: 50px;
   height: 50px;
@@ -96,7 +94,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-
   border: 1px solid black;
   background-color: black;
   color: white;
@@ -106,6 +103,5 @@
 .catalog-pagination-item.active {
   background-color: white;
   color: black;
-
 }
 /*# sourceMappingURL=catalog.css.map */

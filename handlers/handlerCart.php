@@ -2,8 +2,11 @@
 //сюда должны приходить через get-запрос
 //action get-параметр - говорит, что нужно именно сделать с корзиной
 //todo: Сделать проверку на то, что обязательно передаёся action, иначе возвращать через header 400 
+include($_SERVER['DOCUMENT_ROOT'] . '/parts/header_conf.php');
+if (!isset($_SESSION)) {
+    session_start();
+};
 
-session_start();
 $action = $_GET['action'];
 
 if ($action == '') {
@@ -37,14 +40,23 @@ if ($action == 'add') {
             'amount' => 0,
             'size' => $size
         ];
-    } else if (isset($_SESSION['cart'][$product_id])) {
+    } else if ($_SESSION['cart'][$product_id]['size'] !== $size) {
         $_SESSION['cart'][$product_id] = [
             'product_id' => $product_id,
             'amount' => 0,
             'size' => $size
         ];
-        $_SESSION['cart'][$product_id]['size'] = $size;
     }
-    $_SESSION['cart'][$product_id]['size'] = $size;
     $_SESSION['cart'][$product_id]['amount'] += $amount;
+}
+if ($action == 'render') {
+    $product_id =  $_GET['product_id'];
+    $sql = "SELECT * FROM products WHERE id = $product_id";
+    $result = get_db_one_record($link, $sql);
+    if ($result == 404) {
+        echo '404';
+        die;
+    } else {
+        echo json_encode($result);
+    }
 }
