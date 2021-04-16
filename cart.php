@@ -8,7 +8,6 @@ $template = [
 ];
 include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
 ?>
-
 <div class="wrapper">
     <div class="headline">
         <div>
@@ -16,16 +15,18 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
             <p>Товары резервируются на ограниченное время</p>
         </div>
     </div>
-    <div class="table-column-names">
-        <p class="photo-column">Фото</p>
-        <p class="name-column">Наименование</p>
-        <p class="size-column">Размер</p>
-        <p class="amount-column">Количество</p>
-        <p class="price-column">Стоимость</p>
-        <p class="delete-column">Удалить</p>
+    <div class="table">
+        <div class="table-column-names">
+            <p class="photo-column">Фото</p>
+            <p class="name-column">Наименование</p>
+            <p class="size-column">Размер</p>
+            <p class="amount-column">Количество</p>
+            <p class="price-column">Стоимость</p>
+            <p class="delete-column">Удалить</p>
+        </div>
     </div>
     <div class="total">
-        <div class="amount">Итого:20 рублей</div>
+        <div class="amount">Итого: <span class="total-price"></span></div>
     </div>
     <div class="gap">
         <div class="figure"></div>

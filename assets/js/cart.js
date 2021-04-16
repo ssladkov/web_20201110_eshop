@@ -3,6 +3,7 @@ class Cart {
         this.items = [];
         this.fill(this.render);
         this.chosenSize = '';
+        this.totalPrice = 0;
     }
 
     fill(render) {
@@ -17,27 +18,69 @@ class Cart {
                 this.items.push({ 'product_id': item_data['product_id'], 'amount': item_data['amount'], 'size': item_data['size'] })
             });
             // console.log(this.items);
-            if (render) {
+            if (render && cartPage) {
                 this.render();
             }
         });
 
     }
     render() {
-        if (cartPage) {
-            console.log('render');
-            console.log(this.items);
-            this.items.forEach((element) => {
-                let xhr = new XMLHttpRequest();
-                xhr.open('GET', `/handlers/handlerCart.php?action=render&product_id=${element.product_id}`);
-                xhr.send();
+        console.log('render');
+        console.log(this.items);
 
-                xhr.addEventListener('load', () => {
-                    let data = JSON.parse(xhr.responseText);
-                    console.log(data);
-                });
-            })
-        }
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', `/handlers/handlerCart.php?action=render`);
+        xhr.send();
+
+        xhr.addEventListener('load', () => {
+
+            let data = JSON.parse(xhr.responseText);
+            console.log(data);
+            data.forEach((arr) => {
+                let newTable = document.createElement('div');
+                newTable.classList.add('table-item');
+                document.querySelector('.table').appendChild(newTable);
+
+                let photo = document.createElement('div');
+                photo.classList.add('photo-column');
+                photo.classList.add('photo');
+                photo.setAttribute('style', `background-image:url(../uploads/images/${arr.image});`)
+                newTable.appendChild(photo);
+
+                let name = document.createElement('div');
+                name.classList.add('name-column');
+                name.classList.add('name');
+                name.textContent = `${arr.name}`
+                newTable.appendChild(name);
+
+                let size = document.createElement('div');
+                size.classList.add('size-column');
+                size.classList.add('size');
+                size.textContent = `${arr.size}`
+                newTable.appendChild(size);
+
+                let amount = document.createElement('div');
+                amount.classList.add('amount-column');
+                amount.classList.add('amount');
+                amount.textContent = `${arr.amount}`
+                newTable.appendChild(amount);
+
+                let price = document.createElement('div');
+                price.classList.add('price-column');
+                price.classList.add('price');
+                price.textContent = `${arr.price}`
+                newTable.appendChild(price);
+
+                let del = document.createElement('div');
+                del.classList.add('delete-column');
+                newTable.appendChild(del);
+
+                this.totalPrice += (arr.price * arr.amount);
+                console.log(this.totalPrice);
+                document.querySelector('.total-price').textContent = `${this.totalPrice} руб.`;
+            });
+        });
+
     }
 
     add(product_id, amount, chosenSize) {

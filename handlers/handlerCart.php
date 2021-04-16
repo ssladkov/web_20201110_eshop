@@ -3,9 +3,6 @@
 //action get-параметр - говорит, что нужно именно сделать с корзиной
 //todo: Сделать проверку на то, что обязательно передаёся action, иначе возвращать через header 400 
 include($_SERVER['DOCUMENT_ROOT'] . '/parts/header_conf.php');
-if (!isset($_SESSION)) {
-    session_start();
-};
 
 $action = $_GET['action'];
 
@@ -50,13 +47,32 @@ if ($action == 'add') {
     $_SESSION['cart'][$product_id]['amount'] += $amount;
 }
 if ($action == 'render') {
-    $product_id =  $_GET['product_id'];
-    $sql = "SELECT * FROM products WHERE id = $product_id";
-    $result = get_db_one_record($link, $sql);
-    if ($result == 404) {
-        echo '404';
-        die;
-    } else {
-        echo json_encode($result);
-    }
+
+    $product_ids = array_keys($_SESSION['cart']);
+    $product_ids_str = implode(',', $product_ids);
+    $sql = "SELECT * FROM products WHERE id IN($product_ids_str)";
+    // $result = get_db_result_assoc($link, $sql);
+    function get_my_result($link, $sql)
+    {
+        $result = [];
+        $query_result = mysqli_query($link, $sql);
+        while ($row = mysqli_fetch_assoc($query_result)) {
+            $currentId = $row['id'];
+            $sizeAndAmount = [
+                'size' => $_SESSION['cart']["$currentId"]['size'],
+                'amount' => $_SESSION['cart']["$currentId"]['amount'],
+            ];
+            $merge =  array_merge($row, $sizeAndAmount);
+            $result[] = $merge;
+        }
+        return $result;
+    };
+    $result = get_my_result($link, $sql);
+    echo json_encode(array_values($result));
+    //     if ($result == 404) {
+    //         echo '404';
+    //         die;
+    //     } else {
+    //         echo json_encode($result);
+    //     }
 }
