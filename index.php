@@ -5,9 +5,8 @@ $template = [
     'page_css' => 'main.css',
     'page_js' => ['main.js']
 ];
-include($_SERVER['DOCUMENT_ROOT'] . '/parts/functions.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/parts/handlerSubscribe.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/handlers/handlerSubscribe.php');
 ?>
 
 <article>
@@ -64,9 +63,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/handlerSubscribe.php');
 <section>
     <h2>Будь всегда в курсе выгодных предложений</h2>
     <h3><i>подписывайся и следи за новинками и выгодными предложениями</i></h3>
-    <form method="POST" class="email_input" onsubmit="return emailSend()">
+    <form method="POST" class="email_input">
         <input type="email" name="email" placeholder="e-mail" class="email">
-        <input type="submit" value="Записаться">
+        <input type="submit" value="Записаться" onsubmit="e()">
         <div class="error-text">Некорректный e-mail. Попробуйте ещё раз</div>
     </form>
 </section>
