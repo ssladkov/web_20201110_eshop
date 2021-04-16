@@ -1,1 +1,177 @@
-/* No CSS *//*# sourceMappingURL=cart.css.map */
+.headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 300px;
+  text-align: center;
+  color: #303030;
+}
+
+.headline h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.headline p {
+  font-size: 25px;
+  font-weight: 100;
+  font-family: initial;
+  font-style: italic;
+}
+
+.gap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 200px;
+}
+
+.gap .figure {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #f68238;
+  border-left: 2px solid #f68238;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.gap .figure::after {
+  content: '';
+  position: absolute;
+  left: -32px;
+  bottom: 30px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #f68238;
+  border-left: 2px solid #f68238;
+}
+
+.gap .figure::before {
+  content: '';
+  position: absolute;
+  right: -32px;
+  bottom: -32px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #f68238;
+  border-left: 2px solid #f68238;
+}
+
+.table-column-names {
+  width: 100%;
+  border-bottom: lightgrey solid 1px;
+  color: #a09090;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table-column-names p {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 0 5px 0;
+}
+
+.table-column-names .photo-column {
+  -webkit-box-flex: 15%;
+      -ms-flex: 15%;
+          flex: 15%;
+}
+
+.table-column-names .name-column {
+  -webkit-box-flex: 42%;
+      -ms-flex: 42%;
+          flex: 42%;
+}
+
+.table-column-names .size-column, .table-column-names .amount-column, .table-column-names .price-column, .table-column-names .delete-column {
+  -webkit-box-flex: 10%;
+      -ms-flex: 10%;
+          flex: 10%;
+}
+
+.total {
+  min-height: 50px;
+  background-color: rgba(211, 211, 211, 0.2);
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-wrapper {
+  border: 1px solid lightgrey;
+}
+
+.form-wrapper .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-wrapper .form-container form {
+  color: #a09090;
+  width: 700px;
+  margin-bottom: 150px;
+}
+
+.form-wrapper .form-container form input, .form-wrapper .form-container form select {
+  width: 680px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid lightgrey;
+}
+
+.form-wrapper .form-container form input, .form-wrapper .form-container form select:focus {
+  outline: none;
+}
+
+.form-wrapper .form-container form .form-element-small {
+  width: 330px;
+}
+
+.form-wrapper .form-container form label {
+  display: inline-block;
+  width: 342px;
+  margin: 25px 0 5px 0;
+}
+
+.form-wrapper .form-container form .form-element-right {
+  margin-left: 20px;
+}
+
+.payment {
+  background-color: rgba(211, 211, 211, 0.2);
+}
+/*# sourceMappingURL=cart.css.map */
