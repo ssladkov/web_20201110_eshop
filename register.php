@@ -15,7 +15,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
 
 <div class="wrapper">
     <div class="registration">
-        <form action="/handlers/handlerAuth.php?action=register" method="POST">
+        <form action="/handlers/handlerAuth.php?action=register" class="formValidation" method="POST">
             <div class="form_field">
                 <h2>Регистрация</h2>
                 <label for="login" class="required">Выберите никнейм:</label>
@@ -32,9 +32,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
                 <input type="email" class="form-control" name="email" id="email" required>
                 <label for="phone" class="required">Телефон:</label>
                 <input type="text" class="form-control" name="phone" id="phone" required>
-                <input type="submit" value="Создать пользователя"/>
+                <input type="submit" class="validateBtn" value="Создать пользователя"/>
             </div>
-        </form>
+        </form>             
     </div>
 </div>
 
@@ -43,3 +43,5 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
         document.querySelector('.lds-backdrop').classList.add('disabled');
     });
 </script>
+
+<script src='/assets/js/validation.js'></script>
