@@ -96,7 +96,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
             </div>
         </div>
     </div>
-
 </div>
 
 </div>
