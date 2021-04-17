@@ -5,7 +5,7 @@ $template = [
     'page_css' => 'main.css',
     'page_js' => ['main.js']
 ];
-include($_SERVER['DOCUMENT_ROOT'] . '/parts/functions.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/parts/header_conf.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
 ?>
 

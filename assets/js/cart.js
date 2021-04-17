@@ -17,7 +17,13 @@ class Cart {
             data.forEach((item_data) => {
                 this.items.push({ 'product_id': item_data['product_id'], 'amount': item_data['amount'], 'size': item_data['size'] })
             });
-            // console.log(this.items);
+            console.log(this.items);
+            let cartAmount = document.getElementById('cart-amount');
+            let totalAmount = 0;
+            this.items.forEach((element) => {
+                totalAmount += element.amount;
+            });
+            cartAmount.textContent = `Корзина (${totalAmount})`;
             if (render && cartPage) {
                 this.render();
             }
@@ -25,62 +31,108 @@ class Cart {
 
     }
     render() {
-        console.log('render');
-        console.log(this.items);
+        if (this.items.length !== 0) {
+            console.log('render');
+            console.log(this.items);
 
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', `/handlers/handlerCart.php?action=render`);
-        xhr.send();
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', `/handlers/handlerCart.php?action=render`);
+            xhr.send();
 
-        xhr.addEventListener('load', () => {
+            xhr.addEventListener('load', () => {
 
-            let data = JSON.parse(xhr.responseText);
-            console.log(data);
-            data.forEach((arr) => {
-                let newTable = document.createElement('div');
-                newTable.classList.add('table-item');
-                document.querySelector('.table').appendChild(newTable);
+                let data = JSON.parse(xhr.responseText);
+                console.log(data);
+                data.forEach((obj) => {
+                    let currentItemId = obj.id;
+                    let newTable = document.createElement('div');
+                    newTable.classList.add('table-item');
+                    document.querySelector('.table').appendChild(newTable);
 
-                let photo = document.createElement('div');
-                photo.classList.add('photo-column');
-                photo.classList.add('photo');
-                photo.setAttribute('style', `background-image:url(../uploads/images/${arr.image});`)
-                newTable.appendChild(photo);
+                    let photo = document.createElement('div');
+                    photo.classList.add('photo-column');
+                    photo.classList.add('photo');
+                    photo.setAttribute('style', `background-image:url(../uploads/images/${obj.image});`);
+                    newTable.appendChild(photo);
 
-                let name = document.createElement('div');
-                name.classList.add('name-column');
-                name.classList.add('name');
-                name.textContent = `${arr.name}`
-                newTable.appendChild(name);
+                    let name = document.createElement('div');
+                    name.classList.add('name-column');
+                    name.classList.add('name');
+                    name.textContent = `${obj.name}`;
+                    newTable.appendChild(name);
 
-                let size = document.createElement('div');
-                size.classList.add('size-column');
-                size.classList.add('size');
-                size.textContent = `${arr.size}`
-                newTable.appendChild(size);
+                    let size = document.createElement('div');
+                    size.classList.add('size-column');
+                    size.classList.add('size');
+                    size.textContent = `${obj.size}`;
+                    newTable.appendChild(size);
 
-                let amount = document.createElement('div');
-                amount.classList.add('amount-column');
-                amount.classList.add('amount');
-                amount.textContent = `${arr.amount}`
-                newTable.appendChild(amount);
+                    let amount = document.createElement('div');
+                    amount.classList.add('amount-column');
+                    amount.classList.add('amount');
+                    amount.textContent = `${obj.amount}`;
+                    newTable.appendChild(amount);
 
-                let price = document.createElement('div');
-                price.classList.add('price-column');
-                price.classList.add('price');
-                price.textContent = `${arr.price}`
-                newTable.appendChild(price);
+                    let amountAdd = document.createElement('div');
+                    amountAdd.innerHTML = `&#10133;`;
+                    amountAdd.setAttribute('style', 'height:20px;width:20px;;font-size:12px;color:white;background-color:black;cursor:pointer;margin:5px;');
+                    amountAdd.addEventListener('click', () => {
+                        this.addOne(currentItemId);
+                    });
+                    amount.appendChild(amountAdd);
 
-                let del = document.createElement('div');
-                del.classList.add('delete-column');
-                newTable.appendChild(del);
+                    let amountRemove = document.createElement('div');
+                    amountRemove.innerHTML = `&#10134;`;
+                    amountRemove.setAttribute('style', 'height:20px;width:20px;;font-size:12px;color:white;background-color:black;cursor:pointer;margin:5px;');
+                    amountRemove.addEventListener('click', () => {
+                        this.removeOne(currentItemId);
+                    });
+                    amount.appendChild(amountRemove);
 
-                this.totalPrice += (arr.price * arr.amount);
-                console.log(this.totalPrice);
-                document.querySelector('.total-price').textContent = `${this.totalPrice} руб.`;
+
+                    let price = document.createElement('div');
+                    price.classList.add('price-column');
+                    price.classList.add('price');
+                    price.textContent = `${obj.price}`;
+                    newTable.appendChild(price);
+
+                    let del = document.createElement('div');
+                    del.classList.add('delete-column');
+                    del.classList.add('delete');
+                    newTable.appendChild(del);
+                    let delButton = document.createElement('div');
+                    delButton.innerHTML = '&#10006;';
+                    delButton.setAttribute('style', 'cursor:pointer;font-size:20px');
+                    del.appendChild(delButton);
+                    delButton.addEventListener('click', () => {
+                        let xhr = new XMLHttpRequest();
+                        xhr.open('GET', `/handlers/handlerCart.php?action=delete&id=${currentItemId}`);
+                        xhr.send();
+
+                        xhr.addEventListener('load', () => {
+                            console.log(xhr.responseText);
+                            document.location.reload();
+                        });
+                    });
+
+                    this.totalPrice += (obj.price * obj.amount);
+                    console.log(this.totalPrice);
+                    document.querySelector('.total-amount').innerHTML = 'Итого: <span class="total-price"></span>';
+                    document.querySelector('.total-price').textContent = `${this.totalPrice} руб.`;
+                    document.querySelector('.total-end-price-basic').textContent = `Стоимость: ${this.totalPrice} руб.`;
+                    document.querySelector('.total-end-price-final').textContent = `Итого: ${this.totalPrice + 500} руб.`;
+                });
             });
-        });
-
+        } else {
+            let newTable = document.createElement('div');
+            newTable.classList.add('table-item');
+            newTable.setAttribute('style', 'display:flex;justify-content:center;align-items:center;font-size:30px');
+            newTable.textContent = 'Корзина пуста';
+            document.querySelector('.table').appendChild(newTable);
+            console.log('no render');
+            document.querySelector('.total-end-price-basic').textContent = ``;
+            document.querySelector('.total-end-price-final').textContent = `Корзина пуста`;
+        }
     }
 
     add(product_id, amount, chosenSize) {
@@ -104,6 +156,26 @@ class Cart {
         element.classList.add('active');
         this.chosenSize = element.textContent;
         console.log(this.chosenSize);
+    }
+    removeOne(product_id) {
+        let id = product_id;
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', `/handlers/handlerCart.php?action=removeOne&id=${id}`);
+        xhr.send();
+        xhr.addEventListener('load', () => {
+            console.log(xhr.responseText);
+            document.location.reload();
+        });
+    }
+    addOne(product_id) {
+        let id = product_id;
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', `/handlers/handlerCart.php?action=addOne&id=${id}`);
+        xhr.send();
+        xhr.addEventListener('load', () => {
+            console.log(xhr.responseText);
+            document.location.reload();
+        });
     }
 }
 

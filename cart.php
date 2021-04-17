@@ -26,7 +26,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
         </div>
     </div>
     <div class="total">
-        <div class="amount">Итого: <span class="total-price"></span></div>
+        <div class="total-amount"></div>
     </div>
     <div class="gap">
         <div class="figure"></div>
@@ -39,7 +39,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
             </div>
         </div>
         <div class="form-container">
-            <form action="">
+            <form id="cart-form" action="">
                 <label for="select">Выберите вариант доставки</label>
                 <select>
                     <option>Курьерская служба</option>
@@ -76,7 +76,28 @@ include($_SERVER['DOCUMENT_ROOT'] . '/parts/header.php');
                 <p>Все поля обязательны для заполнения</p>
             </div>
         </div>
+        <div class="payment-price">
+            <div class="payment-price-container">
+                <p class="total-end-price-basic"></p>
+                <p class="total-end-price-delivery">Доставка: 500 руб.</p>
+                <span>
+                    <p class="total-end-price-final"></p>
+                </span>
+            </div>
+
+        </div>
+        <div class="payment-method">
+            <div class="payment-method-container">
+                <select>
+                    <option>Банковская карта</option>
+                    <option>Купоны Пятерочки</option>
+                </select>
+                <input from="cart-form" type="submit" value="Заказать" class="payment-button">
+            </div>
+        </div>
     </div>
+
+</div>
 
 </div>
 

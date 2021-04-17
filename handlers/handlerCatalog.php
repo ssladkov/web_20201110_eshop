@@ -1,16 +1,17 @@
 <?php
+
 /**
  * @var $link string
  */
 //Файл для получения данных о каталоге
-include($_SERVER['DOCUMENT_ROOT']. '/parts/header_conf.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/parts/header_conf.php');
 
 $category_id = $_GET['category_id'];
 $per_page = 10;
 $filter_price_min = 0;
 $filter_price_max = 9999999;
 
-if(isset($_GET['filter_price'])) {
+if (isset($_GET['filter_price'])) {
     $filter_arr = explode(':', $_GET['filter_price']);
     $filter_price_min = $filter_arr[0];
     $filter_price_max = $filter_arr[1];
@@ -36,5 +37,4 @@ $response = [
     ],
 ];
 //$response['products'] = get_db_result_assoc($link, $sql_products);
-sleep(1);
 echo json_encode($response);

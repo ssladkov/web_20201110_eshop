@@ -47,32 +47,43 @@ if ($action == 'add') {
     $_SESSION['cart'][$product_id]['amount'] += $amount;
 }
 if ($action == 'render') {
+    if (!empty($_SESSION['cart'])) {
+        $product_ids = array_keys($_SESSION['cart']);
+        $product_ids_str = implode(',', $product_ids);
+        $sql = "SELECT * FROM products WHERE id IN($product_ids_str)";
+        // $result = get_db_result_assoc($link, $sql);
+        function get_my_result($link, $sql)
+        {
+            $result = [];
+            $query_result = mysqli_query($link, $sql);
+            while ($row = mysqli_fetch_assoc($query_result)) {
+                $currentId = $row['id'];
+                $sizeAndAmount = [
+                    'size' => $_SESSION['cart']["$currentId"]['size'],
+                    'amount' => $_SESSION['cart']["$currentId"]['amount'],
+                ];
+                $merge =  array_merge($row, $sizeAndAmount);
+                $result[] = $merge;
+            }
+            return $result;
+        };
+        $result = get_my_result($link, $sql);
+        echo json_encode(array_values($result));
+    } else {
+        echo 404;
+        die;
+    }
+}
 
-    $product_ids = array_keys($_SESSION['cart']);
-    $product_ids_str = implode(',', $product_ids);
-    $sql = "SELECT * FROM products WHERE id IN($product_ids_str)";
-    // $result = get_db_result_assoc($link, $sql);
-    function get_my_result($link, $sql)
-    {
-        $result = [];
-        $query_result = mysqli_query($link, $sql);
-        while ($row = mysqli_fetch_assoc($query_result)) {
-            $currentId = $row['id'];
-            $sizeAndAmount = [
-                'size' => $_SESSION['cart']["$currentId"]['size'],
-                'amount' => $_SESSION['cart']["$currentId"]['amount'],
-            ];
-            $merge =  array_merge($row, $sizeAndAmount);
-            $result[] = $merge;
-        }
-        return $result;
-    };
-    $result = get_my_result($link, $sql);
-    echo json_encode(array_values($result));
-    //     if ($result == 404) {
-    //         echo '404';
-    //         die;
-    //     } else {
-    //         echo json_encode($result);
-    //     }
+if ($action == 'delete') {
+    $product_id = $_GET['id'];
+    unset($_SESSION['cart']["$product_id"]);
+}
+if ($action == 'removeOne') {
+    $product_id = $_GET['id'];
+    $_SESSION['cart']["$product_id"]['amount'] -= 1;
+}
+if ($action == 'addOne') {
+    $product_id = $_GET['id'];
+    $_SESSION['cart']["$product_id"]['amount'] += 1;
 }

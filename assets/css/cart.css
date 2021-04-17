@@ -120,7 +120,7 @@
 
 .table .table-item {
   height: 100px;
-  padding: 15px;
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,8 +130,6 @@
 .table .table-item .photo {
   display: block;
   background-size: contain;
-  height: 100px;
-  width: 100px;
   background-repeat: no-repeat;
   border: 2px solid lightgrey;
   background-position: center center;
@@ -179,6 +177,7 @@
 }
 
 .form-wrapper {
+  background-color: rgba(211, 211, 211, 0.2);
   border: 1px solid lightgrey;
 }
 
@@ -227,16 +226,79 @@
 }
 
 .payment {
+  border: 1px solid lightgrey;
   background-color: rgba(211, 211, 211, 0.2);
   margin-top: 10px;
+}
+
+.payment-price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 150px;
+}
+
+.payment-price-container p {
+  padding: 5px;
+  font-size: 25px;
+  font-weight: 100;
+  font-family: initial;
+}
+
+.payment-price-container span {
+  color: #f68238;
+}
+
+.payment-method {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.payment-method-container .payment-button {
+  display: block;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 50px;
+  min-width: 250px;
+  background-color: #f68238;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.payment-method-container .payment-button:focus {
+  outline: none;
+}
+
+.payment-method-container select {
+  display: block;
+  width: 680px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid lightgrey;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.payment-method-container select:focus {
+  outline: none;
 }
 /*# sourceMappingURL=cart.css.map */
