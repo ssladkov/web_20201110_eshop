@@ -7,7 +7,7 @@
 
 .wrapper {
   margin: 0 auto;
-  max-width: 95%;
+  max-width: 1200px;
 }
 
 header {
@@ -122,7 +122,21 @@ footer .footer-element3 div {
   padding-left: calc(50% - 50px);
 }
 
+footer .footer-element3 div .social-icons{
+  padding: 0px;
+}
+
+footer .footer-element3 div .social-icons a{
+  text-align: left;
+  padding: 5px;
+}
+
 footer .footer-element1 a, footer .footer-element2 a, footer .footer-element3 a {
   font-size: 12px;
+  text-decoration: none;
+}
+
+footer .footer-element1 a:hover, footer .footer-element2 a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
