@@ -8,6 +8,9 @@ if($action == 'products/list') {
     //echo '<h1>Products</h1>';
 }
 
+if($action == 'categories/list') {
+}
+
 function renderAndDie($view, $data) {
     include($_SERVER['DOCUMENT_ROOT']."/admin/views/header.php");
     include($_SERVER['DOCUMENT_ROOT']."/admin/views/$view.php");
