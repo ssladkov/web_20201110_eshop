@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Список продуктов</h1>
+    <h2 class="mt-4">Список продуктов</h2>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -24,4 +24,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <a href="/admin/products/create" class="btn btn-success float-right mt-3">Добавить продукт</a>
 </div>

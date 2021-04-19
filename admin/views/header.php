@@ -9,30 +9,32 @@
 </head>
 
 <!-- Menu -->
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Админка</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin/">Главная</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/products/list">Товары</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/categories/list">Категории</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/sizes/list">Размеры</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/orders/list">Заказы</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
+<div class="container-fluid">
+    <div class="row bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand" href="#">Админка</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/products/list">Товары</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/categories/list">Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/sizes/list">Размеры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders/list">Заказы</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </div>
