@@ -1,0 +1,13 @@
+<ifModule mod_rewrite.c>
+    # включаем расширение RewriteEngine
+    RewriteEngine on
+
+    # RewriteCond - условия
+    # Если не физический файл
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # И если не физическая папка
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Переадрессовать все запросы на index.php
+    RewriteRule . index.php
+</ifModule>
