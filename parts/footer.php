@@ -2,8 +2,8 @@
     <div class="footer-element1">
         <div>
             <h4>Коллекции</h4>
-            <a href="/catalog.php?id=1">Женщинам</a><br>
-            <a href="/catalog.php?id=2">Мужчинам</a><br>
+            <a href="/catalog.php?id=2">Женщинам</a><br>
+            <a href="/catalog.php?id=1">Мужчинам</a><br>
             <a href="#">Детям</a><br>
             <a href="#">Новинки</a>
         </div>
@@ -22,6 +22,17 @@
             <h4>Мы в социальных сетях</h4>
             <p>Сайт разработан inordic.ru</p>
             <p>2018 &#169; Все права защищены</p>
+            <div class="social-icons">
+                <a href="https:twitter.com" target="_blank">
+                    <img src="/assets/images/icons/twitter.jpg" alt="TW logo" title="TW logo">
+                </a>
+                <a href="https:/facebook.com" target="_blank">
+                    <img src="/assets/images/icons/fb.jpg" alt="FB logo" title="FB logo">
+                </a>
+                <a href="https:instagram.com" target="_blank">
+                    <img src="/assets/images/icons/insta.jpg" alt="instagram logo" title="instagram logo">
+                </a>
+            </div>
         </div>
     </div>
 </footer>
