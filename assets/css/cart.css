@@ -1,6 +1,4 @@
-
 @charset "UTF-8";
-
 .headline {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,7 +74,6 @@
   border-left: 2px solid #f68238;
 }
 
-
 .table {
   /* СТИЛИ ДЛЯ RENDER */
 }
@@ -89,7 +86,6 @@
   display: -ms-flexbox;
   display: flex;
 }
-
 
 .table .table-column-names p {
   display: inline-block;
@@ -110,13 +106,11 @@
           flex: 15%;
 }
 
-
 .table .name-column {
   -webkit-box-flex: 42%;
       -ms-flex: 42%;
           flex: 42%;
 }
-
 
 .table .size-column, .table .amount-column, .table .price-column, .table .delete-column {
   -webkit-box-flex: 10%;
@@ -162,6 +156,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .total {
   min-height: 50px;
   background-color: rgba(211, 211, 211, 0.2);
@@ -176,7 +171,6 @@
       -ms-flex-align: center;
           align-items: center;
 }
-
 
 .total span {
   color: #f68238;
