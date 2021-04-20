@@ -102,17 +102,20 @@ $color5:rgb(246,130,56);
             background-repeat:no-repeat;
             border:2px solid $color2;
             background-position: center center;
+            flex:15%;
             
         }
         .name {
             display: flex;
             align-items: center;
             padding-left:10px;
+            flex:42%;
         }
         .size ,.amount,.price,.delete {
             display: flex;
             align-items: center;
             justify-content: center;
+            flex:10%;
         }
     }
 }
@@ -221,4 +224,13 @@ $color5:rgb(246,130,56);
         }
         
     }
+}
+.amount-button {
+    height:20px;
+    width:20px;
+    font-size:12px;
+    color:white;
+    background-color:black;
+    cursor:pointer;
+    margin:5px;
 }

@@ -50,32 +50,28 @@ class Cart {
                     document.querySelector('.table').appendChild(newTable);
 
                     let photo = document.createElement('div');
-                    photo.classList.add('photo-column');
                     photo.classList.add('photo');
                     photo.setAttribute('style', `background-image:url(../uploads/images/${obj.image});`);
                     newTable.appendChild(photo);
 
                     let name = document.createElement('div');
-                    name.classList.add('name-column');
                     name.classList.add('name');
                     name.textContent = `${obj.name}`;
                     newTable.appendChild(name);
 
                     let size = document.createElement('div');
-                    size.classList.add('size-column');
                     size.classList.add('size');
                     size.textContent = `${obj.size}`;
                     newTable.appendChild(size);
 
                     let amount = document.createElement('div');
-                    amount.classList.add('amount-column');
                     amount.classList.add('amount');
                     amount.textContent = `${obj.amount}`;
                     newTable.appendChild(amount);
 
                     let amountAdd = document.createElement('div');
                     amountAdd.innerHTML = `&#10133;`;
-                    amountAdd.setAttribute('style', 'height:20px;width:20px;;font-size:12px;color:white;background-color:black;cursor:pointer;margin:5px;');
+                    amountAdd.classList.add('amount-button');
                     amountAdd.addEventListener('click', () => {
                         this.addOne(currentItemId);
                     });
@@ -83,7 +79,7 @@ class Cart {
 
                     let amountRemove = document.createElement('div');
                     amountRemove.innerHTML = `&#10134;`;
-                    amountRemove.setAttribute('style', 'height:20px;width:20px;;font-size:12px;color:white;background-color:black;cursor:pointer;margin:5px;');
+                    amountRemove.classList.add('amount-button');
                     amountRemove.addEventListener('click', () => {
                         this.removeOne(currentItemId);
                     });

@@ -51,24 +51,15 @@ if ($action == 'render') {
         $product_ids = array_keys($_SESSION['cart']);
         $product_ids_str = implode(',', $product_ids);
         $sql = "SELECT * FROM products WHERE id IN($product_ids_str)";
-        // $result = get_db_result_assoc($link, $sql);
-        function get_my_result($link, $sql)
-        {
-            $result = [];
-            $query_result = mysqli_query($link, $sql);
-            while ($row = mysqli_fetch_assoc($query_result)) {
-                $currentId = $row['id'];
-                $sizeAndAmount = [
-                    'size' => $_SESSION['cart']["$currentId"]['size'],
-                    'amount' => $_SESSION['cart']["$currentId"]['amount'],
-                ];
-                $merge =  array_merge($row, $sizeAndAmount);
-                $result[] = $merge;
-            }
-            return $result;
-        };
-        $result = get_my_result($link, $sql);
-        echo json_encode(array_values($result));
+
+        $result = get_db_result_assoc($link, $sql);
+
+        foreach ($result as &$product) {
+            $currentId = $product['id'];
+            $product['size'] = $_SESSION['cart']["$currentId"]['size'];
+            $product['amount'] = $_SESSION['cart']["$currentId"]['amount'];
+        }
+        echo json_encode($result);
     } else {
         echo 404;
         die;
@@ -87,3 +78,22 @@ if ($action == 'addOne') {
     $product_id = $_GET['id'];
     $_SESSION['cart']["$product_id"]['amount'] += 1;
 }
+
+
+// function get_my_result($link, $sql)
+//         {
+//             $result = [];
+//             $query_result = mysqli_query($link, $sql);
+//             while ($row = mysqli_fetch_assoc($query_result)) {
+//                 $currentId = $row['id'];
+//                 $sizeAndAmount = [
+//                     'size' => $_SESSION['cart']["$currentId"]['size'],
+//                     'amount' => $_SESSION['cart']["$currentId"]['amount'],
+//                 ];
+//                 $merge =  array_merge($row, $sizeAndAmount);
+//                 $result[] = $merge;
+//             }
+//             return $result;
+//         };
+//         $result = get_my_result($link, $sql);
+//         echo json_encode(array_values($result));

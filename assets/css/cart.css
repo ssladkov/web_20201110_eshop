@@ -133,6 +133,9 @@
   background-repeat: no-repeat;
   border: 2px solid lightgrey;
   background-position: center center;
+  -webkit-box-flex: 15%;
+      -ms-flex: 15%;
+          flex: 15%;
 }
 
 .table .table-item .name {
@@ -143,6 +146,9 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10px;
+  -webkit-box-flex: 42%;
+      -ms-flex: 42%;
+          flex: 42%;
 }
 
 .table .table-item .size, .table .table-item .amount, .table .table-item .price, .table .table-item .delete {
@@ -155,6 +161,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-flex: 10%;
+      -ms-flex: 10%;
+          flex: 10%;
 }
 
 .total {
@@ -300,5 +309,15 @@
 
 .payment-method-container select:focus {
   outline: none;
+}
+
+.amount-button {
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  margin: 5px;
 }
 /*# sourceMappingURL=cart.css.map */
