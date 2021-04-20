@@ -73,3 +73,5 @@ include($_SERVER['DOCUMENT_ROOT'] . '/handlers/handlerSubscribe.php');
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/parts/footer.php');
 ?>
+
+<script src='/assets/js/validation.js'></script>
