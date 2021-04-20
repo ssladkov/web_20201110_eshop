@@ -2,8 +2,8 @@
 //сюда должны приходить через get-запрос
 //action get-параметр - говорит, что нужно именно сделать с корзиной
 //todo: Сделать проверку на то, что обязательно передаёся action, иначе возвращать через header 400 
+include($_SERVER['DOCUMENT_ROOT'] . '/parts/header_conf.php');
 
-session_start();
 $action = $_GET['action'];
 
 if ($action == '') {
@@ -24,6 +24,7 @@ if ($action == 'add') {
     //todo: если в массиве $_SESSION['cart'] уже есть продукт с указанным id, то мы должны просто изменять его количество
     $product_id = $_GET['product_id'];
     $amount = $_GET['amount'];
+    $size = $_GET['chosenSize'];
 
     if ($product_id == '' || $amount == '') {
         header('HTTP/1.1 400 Bad Request');
@@ -33,8 +34,66 @@ if ($action == 'add') {
     if (!isset($_SESSION['cart'][$product_id])) {
         $_SESSION['cart'][$product_id] = [
             'product_id' => $product_id,
-            'amount' => 0
+            'amount' => 0,
+            'size' => $size
+        ];
+    } else if ($_SESSION['cart'][$product_id]['size'] !== $size) {
+        $_SESSION['cart'][$product_id] = [
+            'product_id' => $product_id,
+            'amount' => 0,
+            'size' => $size
         ];
     }
     $_SESSION['cart'][$product_id]['amount'] += $amount;
 }
+if ($action == 'render') {
+    if (!empty($_SESSION['cart'])) {
+        $product_ids = array_keys($_SESSION['cart']);
+        $product_ids_str = implode(',', $product_ids);
+        $sql = "SELECT * FROM products WHERE id IN($product_ids_str)";
+
+        $result = get_db_result_assoc($link, $sql);
+
+        foreach ($result as &$product) {
+            $currentId = $product['id'];
+            $product['size'] = $_SESSION['cart']["$currentId"]['size'];
+            $product['amount'] = $_SESSION['cart']["$currentId"]['amount'];
+        }
+        echo json_encode($result);
+    } else {
+        echo 404;
+        die;
+    }
+}
+
+if ($action == 'delete') {
+    $product_id = $_GET['id'];
+    unset($_SESSION['cart']["$product_id"]);
+}
+if ($action == 'removeOne') {
+    $product_id = $_GET['id'];
+    $_SESSION['cart']["$product_id"]['amount'] -= 1;
+}
+if ($action == 'addOne') {
+    $product_id = $_GET['id'];
+    $_SESSION['cart']["$product_id"]['amount'] += 1;
+}
+
+
+// function get_my_result($link, $sql)
+//         {
+//             $result = [];
+//             $query_result = mysqli_query($link, $sql);
+//             while ($row = mysqli_fetch_assoc($query_result)) {
+//                 $currentId = $row['id'];
+//                 $sizeAndAmount = [
+//                     'size' => $_SESSION['cart']["$currentId"]['size'],
+//                     'amount' => $_SESSION['cart']["$currentId"]['amount'],
+//                 ];
+//                 $merge =  array_merge($row, $sizeAndAmount);
+//                 $result[] = $merge;
+//             }
+//             return $result;
+//         };
+//         $result = get_my_result($link, $sql);
+//         echo json_encode(array_values($result));

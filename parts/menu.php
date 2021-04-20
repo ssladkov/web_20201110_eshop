@@ -1,3 +1,9 @@
+<?php
+$totalCartAmount = 0;
+foreach ($_SESSION['cart'] as $key => $element) {
+    $totalCartAmount += $element['amount'];
+}
+?>
 <header>
     <nav>
         <a href="/"><img class="logo" src="../uploads/icons/logo.jpg"></a>
@@ -10,6 +16,6 @@
         <img src="../uploads/icons/account.png">
         <a class="a-padding-right">Войти</a>
         <img src="../uploads/icons/bascet.png">
-        <a href="/cart.php">Корзина</a>
+        <a id="cart-amount" href="/cart.php">Корзина (<?php echo $totalCartAmount;  ?>)</a>
     </section>
 </header>

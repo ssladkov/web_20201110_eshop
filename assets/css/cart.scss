@@ -63,17 +63,23 @@ $color5:rgb(246,130,56);
        
     }
 }
-.table-column-names {
-    width:100%;
-    border-bottom:$color2 solid 1px;
-    color:$color4;
-    display:flex;
-    p {
-        display:inline-block;
-        text-align: center;
-        text-transform: uppercase;
-        font-size:12px;
-        padding:5px 0 5px 0;
+.table {
+    .table-column-names {
+        width:100%;
+        border-bottom:$color2 solid 1px;
+        color:$color4;
+        display:flex;
+        p {
+            display:inline-block;
+            text-align: center;
+            text-transform: uppercase;
+            font-size:12px;
+            padding:5px 0 5px 0;
+        }
+        .name-column {
+            text-align: initial;
+            padding-left:30px;
+        }
     }
     .photo-column {
         flex:15%;
@@ -84,6 +90,34 @@ $color5:rgb(246,130,56);
     .size-column ,.amount-column,.price-column,.delete-column {
         flex:10%;
     }
+    /* СТИЛИ ДЛЯ RENDER */
+    .table-item {
+        height:100px;
+        padding:5px;
+        display:flex;
+        border-bottom:$color2 solid 1px;
+        .photo {
+            display: block;
+            background-size:contain;
+            background-repeat:no-repeat;
+            border:2px solid $color2;
+            background-position: center center;
+            flex:15%;
+            
+        }
+        .name {
+            display: flex;
+            align-items: center;
+            padding-left:10px;
+            flex:42%;
+        }
+        .size ,.amount,.price,.delete {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex:10%;
+        }
+    }
 }
 .total {
     min-height:50px;
@@ -92,8 +126,12 @@ $color5:rgb(246,130,56);
     display:flex;
     justify-content: flex-end;
     align-items: center;
+    span {
+        color:$color5;
+    }
 }
 .form-wrapper {
+    background-color:$color3;
     border:1px solid $color2;
     .form-container     {
         display:flex;
@@ -127,5 +165,72 @@ $color5:rgb(246,130,56);
     }
 }
 .payment {
+    border:1px solid $color2;
     background-color:$color3;
+    margin-top:10px;
+    &-price {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        min-height:150px;
+        &-container {
+            p {
+                padding:5px;
+                font-size: 25px;
+                font-weight: 100;
+                font-family: initial;
+            }
+            span {
+                color:$color5;
+            }
+        }
+    }
+    &-method {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        &-container {
+            .payment-button {
+                display:block;
+                border:0;
+                color:#fff;
+                font-size:16px;
+                text-transform: uppercase;
+                height:50px;
+                min-width:250px;
+                background-color: $color5;
+                text-align:center;
+                margin:0 auto;
+                margin-top:50px;
+                margin-bottom:50px;
+                cursor:pointer;
+            }
+            .payment-button:focus {
+                outline:none;
+            }
+            select {
+                display:block;
+                width:680px;
+                padding:10px;
+                box-sizing: border-box;
+                border:1px solid $color2;
+                text-align: center;
+                margin:0 auto;
+            }
+            select:focus {
+                outline:none;
+            }
+
+        }
+        
+    }
+}
+.amount-button {
+    height:20px;
+    width:20px;
+    font-size:12px;
+    color:white;
+    background-color:black;
+    cursor:pointer;
+    margin:5px;
 }
