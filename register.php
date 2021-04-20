@@ -18,26 +18,26 @@ include($_SERVER['DOCUMENT_ROOT'].'/parts/header.php');
         <form action="/handlers/handlerAuth.php?action=register" method="POST">
             <div class="form_field">
                 <h2>Регистрация</h2>
-                <label for="login" class="required">Выберите никнейм:</label>
-                <input type="text" class="form-control" name="login" id="login" required>
+                <label for="login">Выберите никнейм:</label>
+                <input type="text" class="form-control required" name="login" id="login">
                 <div class="error-text" style="height: 20px; font-size: 10px; color: red"></div>
-                <label for="password" class="required">Пароль:</label>
-                <input type="password" class="form-control" name="password" id="password" required>
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control required" name="password" id="password">
                 <div class="error-text" style="height: 20px; font-size: 10px; color: red"></div>
-                <label for="password_second" class="required">Повторите пароль:</label>
-                <input type="password" class="form-control" name="password_second" id="password_second" required>
+                <label for="password_second">Повторите пароль:</label>
+                <input type="password" class="form-control required" name="password_second" id="password_second">
                 <div class="error-text" style="height: 20px; color: red"></div>
-                <label for="first_name" class="required">Имя:</label>
-                <input type="text" class="form-control" name="first_name" id="first_name" required>
+                <label for="first_name">Имя:</label>
+                <input type="text" class="form-control required" name="first_name" id="first_name">
                 <div class="error-text" style="height: 20px; color: red"></div>
-                <label for="last_name" class="required">Фамилия:</label>
-                <input type="text" class="form-control" name="last_name" id="last_name" required>
+                <label for="last_name">Фамилия:</label>
+                <input type="text" class="form-control required" name="last_name" id="last_name">
                 <div class="error-text" style="height: 20px; color: red"></div>
-                <label for="email" class="required">Адрес электронной почты:</label>
-                <input type="email" class="form-control" name="email" id="email" required>
+                <label for="email">Адрес электронной почты:</label>
+                <input type="email" class="form-control required" name="email" id="email">
                 <div class="error-text" style="height: 20px; color: red"></div>
-                <label for="phone" class="required">Телефон:</label>
-                <input type="text" class="form-control" name="phone" id="phone" required>
+                <label for="phone">Телефон:</label>
+                <input type="text" class="form-control required" name="phone" id="phone">
                 <div class="error-text" style="height: 20px; color: red"></div>
                 <input type="submit" value="Создать пользователя"/>
             </div>
