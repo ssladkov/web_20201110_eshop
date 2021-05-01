@@ -65,8 +65,21 @@ header .cart a {
   padding-right: 0px;
 }
 
-header .cart .a-padding-right {
-  padding-right: 50px;
+header .cart a:hover {
+  text-decoration: underline;
+}
+
+header .cart .registration {
+  padding-right: 30px;
+  padding-left: 0px;
+}
+
+header .cart .logout {
+  display: none;
+}
+
+header .cart .logout span {
+  color: rgb(255, 123, 0);
 }
 
 header:after {
