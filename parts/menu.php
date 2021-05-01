@@ -1,4 +1,11 @@
-
+<?php
+    $totalCartAmount = 0;
+    if(isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $key => $element) {
+            $totalCartAmount += $element['amount'];
+        }
+    }
+?>
 <header>
     <nav>
         <a href="/"><img class="logo" src="../uploads/icons/logo.jpg"></a>
@@ -10,7 +17,9 @@
     <section class="cart">
         <img src="../uploads/icons/account.png">
         <div class="login_registration">
-        <?php isset($_SESSION['user'])) ? echo `<span>Привет, $_SESSION['user', 1]</span>` : echo ?>
+        <?php if(isset($_SESSION['user'])) : ?>
+            <span>Привет, <?=$_SESSION['user']['name'];?></span>
+        <?php else : ?>
             <a href="/auth.php" class="login">Войти</a>
             <span>/</span>
             <a href="/register.php" class="registration">Регистрация</a>
